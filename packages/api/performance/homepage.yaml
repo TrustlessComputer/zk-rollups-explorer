@@ -1,0 +1,33 @@
+config:
+  target: "http://127.0.0.1:3020"
+  http:
+    timeout: 100
+    extendedMetrics: true
+  phases:
+    - duration: 500
+      arrivalCount: 100
+
+  environments:
+    local:
+      target: "http://localhost:3020"
+  plugins:
+    metrics-by-endpoint:
+      useOnlyRequestNames: true
+
+scenarios:
+  - name: "Home page endpoints"
+    flow:
+      # STATS
+      - get:
+          name: "/stats"
+          url: "/stats"
+
+      # BATCHES
+      - get:
+          name: "/batches"
+          url: "/batches"
+
+      # TRANSACTIONS
+      - get:
+          name: "/transactions"
+          url: "/transactions"

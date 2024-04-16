@@ -1,0 +1,51 @@
+{
+  "name": "block-explorer",
+  "version": "1.0.0-development",
+  "title": "RuneChain Block Explorer",
+  "description": "RuneChain Block Explorer",
+  "author": "Matter Labs",
+  "license": "MIT",
+  "repository": "https://github.com/matter-labs/block-explorer",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "prepare": "husky install",
+    "lint": "lerna run lint",
+    "test": "lerna run test",
+    "test:ci": "lerna run test:ci",
+    "test:e2e": "lerna run test:e2e",
+    "dev": "lerna run dev",
+    "build": "lerna run build",
+    "start": "lerna run start",
+    "db:create": "lerna run db:create",
+    "db:drop": "lerna run db:drop",
+    "hyperchain:configure": "ts-node scripts/setup-hyperchain-config"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@matterlabs/prettier-config": "^1.0.2",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/github": "^8.0.2",
+    "@semantic-release/npm": "^9.0.0",
+    "@semantic-release/release-notes-generator": "^10.0.3",
+    "@types/node": "18.17.18",
+    "eslint": "8.48.0",
+    "husky": "8.0.1",
+    "lerna": "^7.2.0",
+    "prettier": "2.8.4",
+    "semantic-release": "^21.1.1",
+    "typescript": "4.7.4",
+    "enquirer": "2.3.6",
+    "dotenv": "16.1.4",
+    "pg-connection-string": "2.6.2"
+  },
+  "engines": {
+    "npm": ">=9.0.0",
+    "node": ">=18.0.0"
+  }
+}

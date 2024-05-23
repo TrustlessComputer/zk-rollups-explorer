@@ -82,9 +82,9 @@ const tableInfoItems = computed(() => {
     }
   );
   for (const [key, timeKey] of [
-    ["commitTxHash", "committedAt", "notYetCommitted"],
-    ["proveTxHash", "provenAt", "notYetProven"],
-    ["executeTxHash", "executedAt", "notYetExecuted"],
+    // ["commitTxHash", "committedAt", "notYetCommitted"],
+    // ["proveTxHash", "provenAt", "notYetProven"],
+    // ["executeTxHash", "executedAt", "notYetExecuted"],
   ] as [keyof BatchDetails, keyof BatchDetails, string][]) {
     if (props.batch[key]) {
       tableItems.push(

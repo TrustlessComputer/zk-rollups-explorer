@@ -215,13 +215,6 @@ import TableBodyColumn from "@/components/common/table/TableBodyColumn.vue";
 import TableHeadColumn from "@/components/common/table/TableHeadColumn.vue";
 import TimeField from "@/components/common/table/fields/TimeField.vue";
 import EthereumIcon from "@/components/icons/Ethereum.vue";
-import ZkSyncIcon from "@/components/icons/ZkSync.vue";
-import BVMNetworkIcon from "@/components/icons/BVMNetwork.vue";
-import BVMNetworkIcon18 from "@/components/icons/BVMNetworkIcon18.vue";
-import RuneLogoIcon from "@/components/icons/RuneLogo.vue";
-import RuneChainIcon18 from "@/components/icons/RuneChainIcon18.vue";
-import RuneChainIcon18Transparent from "@/components/icons/RuneChainIcon18Transparent.vue";
-
 import TokenAmountPriceTableCell from "@/components/transactions/TokenAmountPriceTableCell.vue";
 import TransactionDirectionTableCell from "@/components/transactions/TransactionDirectionTableCell.vue";
 import TransactionNetworkSquareBlock from "@/components/transactions/TransactionNetworkSquareBlock.vue";
@@ -318,8 +311,8 @@ const transactions = computed<TransactionListItemMapped[] | undefined>(() => {
     fromNetwork: transaction.isL1Originated ? "L1" : "L2",
     toNetwork: "L2", // even withdrawals go through L2 addresses (800A or bridge addresses)
     statusColor: transaction.status === "failed" ? "danger" : "dark-success",
-    // statusIcon: ["failed", "included"].includes(transaction.status) ? RuneChainIcon18Transparent : BVMNetworkIcon18,
-    statusIcon: ["failed", "included"].includes(transaction.status) ? "RuneChain" : "BVM",
+    // statusIcon: ["failed", "included"].includes(transaction.status) ? "RuneChain" : "BVM",
+    statusIcon: ["failed", "included", "committed", "proved"].includes(transaction.status) ? "BVM" : "Bitcoin",
   }));
 });
 

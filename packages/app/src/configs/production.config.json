@@ -14,20 +14,6 @@
       "published": true,
       "rpcUrl": "https://mainnet.era.zksync.io",
       "tokensMinLiquidity": 0
-    },
-    {
-      "apiUrl": "https://api.testnet.runechain.com", //TO DO 
-      "verificationApiUrl": "https://contractverification.testnet.runechain.com", //TO DO 
-      "hostnames": ["localhost"],//TO DO 
-      "icon": "/images/icons/runchains.svg",  //TO DO 
-      "l2ChainId": 22221, // TO DO 
-      "l2NetworkName": "runechain", // TO DO 
-      "bridgeUrl": "https://portal.testnet.runechain.com/bridge", // TO DO 
-      "l2WalletUrl": "https://testnet.runechain.com/rpc", // TO DO 
-      "maintenance": false, // TO DO 
-      "name": "Rune Chain", // TO DO 
-      "published": true,  // TO DO 
-      "rpcUrl": "http://127.0.0.1:3050",  // TO DO 
     }
   ]
 }

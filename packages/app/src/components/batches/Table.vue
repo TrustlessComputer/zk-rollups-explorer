@@ -62,11 +62,6 @@ import Table from "@/components/common/table/Table.vue";
 import TableBodyColumn from "@/components/common/table/TableBodyColumn.vue";
 import TableHeadColumn from "@/components/common/table/TableHeadColumn.vue";
 import TimeField from "@/components/common/table/fields/TimeField.vue";
-import EthereumIcon from "@/components/icons/Ethereum.vue";
-import BVMNetworkIcon from "@/components/icons/BVMNetwork.vue";
-import BVMNetworkIcon18 from "@/components/icons/BVMNetworkIcon18.vue";
-// import ZkSyncIcon from "@/components/icons/ZkSync.vue";
-import RuneChainIcon18Transparent from "@/components/icons/RuneChainIcon18Transparent.vue";
 
 import type { BatchListItem } from "@/composables/useBatches";
 import type { PropType } from "vue";
@@ -96,12 +91,11 @@ defineProps({
 
 function getBadgeIconByStatus(status: BatchListItem["status"]) {
   if (status === "sealed") {
-    // return RuneChainIcon18Transparent;
-    return "RuneChain";
+    // return "RuneChain"
+    return "BVM";
   }
-  //return EthereumIcon;
-  // return BVMNetworkIcon18;
-  return "BVM";
+  // return "BVM"
+  return "Bitcoin";
 }
 </script>
 

@@ -1,8 +1,8 @@
 {
   "name": "app",
   "version": "0.0.0",
-  "title": "RuneChain Block Explorer App",
-  "description": "RuneChain Block Explorer App",
+  "title": "Block Explorer App",
+  "description": "Block Explorer App",
   "author": "Matter Labs",
   "private": true,
   "license": "MIT",

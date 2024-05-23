@@ -1,6 +1,6 @@
-<h1 align="center">RuneChain Block Explorer</h1>
+<h1 align="center">Block Explorer</h1>
 
-<p align="center">Online blockchain browser for viewing and analyzing <a href="https://zksync.io">RuneChain</a> blockchain.</p>
+<p align="center">Online blockchain browser for viewing and analyzing <a href="https://zksync.io">BVM</a> blockchain.</p>
 
 ## 📌 Overview
 
@@ -111,7 +111,7 @@ There is a docker compose configuration that allows you to run Block Explorer an
 docker compose up
 ```
 
-It will run local Ethereum node, RuneChain, Postgres DB and all Block Explorer services.
+It will run local Ethereum node, BVM, Postgres DB and all Block Explorer services.
 
 ## ⛓️ Connection to your Hyperchain
 
@@ -149,7 +149,7 @@ We follow the Conventional Commits [specification](https://www.conventionalcommi
 
 ## 📘 License
 
-RuneChain Block Explorer is distributed under the terms of either
+Block Explorer is distributed under the terms of either
 
 - Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or <http://www.apache.org/licenses/LICENSE-2.0>)
 - MIT license ([LICENSE-MIT](LICENSE-MIT) or <http://opensource.org/licenses/MIT>)

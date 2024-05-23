@@ -1,7 +1,7 @@
 {
   "general": {
-    "l2NetworkName": "RuneChain",
-    "l1NetworkName": "BVM"
+    "l2NetworkName": "BVM",
+    "l1NetworkName": "Bitcoin"
   },
   "copyButton": {
     "tooltip": "Copied!"
@@ -15,7 +15,7 @@
   "networkStats": {
     "title": "Network Stats",
     "subtitleTestnet": "Stats are occasionally reset on testnet.",
-    "subtitleMainnet": "RuneChain Mainnet is open to everyone.",
+    "subtitleMainnet": "BVM Mainnet is open to everyone.",
     "committed": "Committed Blocks",
     "verified": "Verified Blocks",
     "transactions": "Transactions",
@@ -273,7 +273,7 @@
     },
     "tooltipInfo": "Latest batches submitted to Ethereum Network",
     "status": {
-      "verified": "Executed on",
+      "verified": "Inscribed on",
       "sealed": "Processed on",
       "failed": "Failed"
     }
@@ -309,8 +309,8 @@
     "subtitle": "zkRollups significantly cheaper than L1 or Optimistic Rollups"
   },
   "blockExplorer": {
-    "title": "RuneChain Block Explorer",
-    "subtitle": "RuneChain Block Explorer provides all the information to deep dive into transactions, blocks, contracts, and much more. Deep dive into RuneChain and explore the network.",
+    "title": "Block Explorer",
+    "subtitle": "Block Explorer provides all the information to deep dive into transactions, blocks, contracts, and much more. Deep dive into BVM and explore the network.",
     "latestBlocks": "Latest Blocks",
     "latestTransactions": "Latest Transactions",
     "batches": "Latest Batches"
@@ -407,7 +407,7 @@
   },
   "contractVerification": {
     "title": "Smart Contract Verification",
-    "subtitle": "Source code verification provides transparency for users interacting with smart contracts. By uploading the source code, RuneChain Explorer will match the compiled code with that on the blockchain.",
+    "subtitle": "Source code verification provides transparency for users interacting with smart contracts. By uploading the source code, BVM Explorer will match the compiled code with that on the blockchain.",
     "resources": {
       "title": "You can also verify your smart-contract using {hardhat}",
       "links": {
@@ -664,7 +664,7 @@
     }
   },
   "document": {
-    "title": "RuneChain Block Explorer",
+    "title": "Block Explorer",
     "home": "Transactions, Blocks, Contracts and much more"
   },
   "notFound": {

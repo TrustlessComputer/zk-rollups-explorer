@@ -129,11 +129,10 @@ import NetworkSwitch from "@/components/NetworkSwitch.vue";
 import DiscordIcon from "@/components/icons/DiscordIcon.vue";
 import HeroArrows from "@/components/icons/HeroArrows.vue";
 import HeroArrows1 from "@/components/icons/HeroArrows1.vue";
-
+import RuneChain from "@/components/icons/RuneLogo.vue";
 import TwitterIcon from "@/components/icons/TwitterIcon.vue";
 import ZkSync from "@/components/icons/ZkSync.vue";
 import ZkSyncEra from "@/components/icons/ZkSyncEra.vue";
-import RuneChain from "@/components/icons/RuneLogo.vue";
 
 import useContext from "@/composables/useContext";
 import useLocalization from "@/composables/useLocalization";
@@ -185,6 +184,10 @@ if (currentNetwork.value.bridgeUrl) {
   links.push({
     label: computed(() => t("header.nav.bridge")),
     url: computed(() => currentNetwork.value.bridgeUrl!),
+  });
+  links.push({
+    label: computed(() => t("header.nav.systemStatus")),
+    to: { name: "system-status" },
   });
 }
 

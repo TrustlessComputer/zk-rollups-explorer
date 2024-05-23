@@ -67,6 +67,14 @@ export default [
     },
   },
   {
+    path: "/system-status",
+    name: "system-status",
+    component: () => import("@/views/SystemStatus.vue"),
+    meta: {
+      title: "systemStatus.title",
+    },
+  },
+  {
     path: "/tokenlist",
     redirect: "tokens",
   },

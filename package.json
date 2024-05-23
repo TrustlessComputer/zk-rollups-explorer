@@ -12,7 +12,6 @@
   ],
   "scripts": {
     "prepare": "husky install",
-    "lint": "lerna run lint",
     "test": "lerna run test",
     "test:ci": "lerna run test:ci",
     "test:e2e": "lerna run test:e2e",

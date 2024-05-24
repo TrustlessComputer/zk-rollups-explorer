@@ -15,7 +15,7 @@ import InfoTableSection from "@/components/batches/InfoTableSection.vue";
 import CopyContent from "@/components/common/table/fields/CopyContent.vue";
 import TimeField from "@/components/common/table/fields/TimeField.vue";
 
-import useBatchesEnhance from "@/composables/useBatchesEnhance";
+import useBatchesStatus from "@/composables/useBatchesStatus";
 import useContext from "@/composables/useContext";
 
 import type { BatchDetails } from "@/composables/useBatch";
@@ -26,14 +26,6 @@ import { arrayHalfDivider } from "@/utils/helpers";
 const { t } = useI18n();
 const { width: screenWidth } = useWindowSize();
 const { currentNetwork } = useContext();
-const {
-  fetch: getBatchesEnhance,
-  pending: isBatchesStatusPending,
-  failed: isBatchesStatusFailed,
-  item: batchStatus,
-} = useBatchesEnhance();
-
-getBatchesEnhance();
 
 const props = defineProps({
   batch: {
@@ -50,50 +42,9 @@ const props = defineProps({
   },
 });
 
-// console.log("Batch Detail props ", props);
-
-const pendingJobsByBatchNumbers = computed(() => {
-  if (batchStatus?.value?.pendingJob && batchStatus?.value.pendingJob?.length > 0) {
-    return batchStatus?.value?.pendingJob;
-  }
-  return [];
-});
-
-const sendingJobsByBatchNumbers = computed(() => {
-  if (batchStatus?.value?.sendingJob && batchStatus?.value?.sendingJob.length > 0) {
-    return batchStatus?.value?.sendingJob;
-  }
-  return [];
-});
-
-const successJobByBatchNumbers = computed(() => {
-  if (batchStatus?.value?.successJob && batchStatus?.value?.successJob?.length > 0) {
-    return batchStatus?.value?.successJob;
-  }
-  return [];
-});
-
-const txHashPendingBitcoin = computed(() => {
-  return pendingJobsByBatchNumbers.value.find((item) => item.batchNumber === String(props.batchNumber));
-});
-const txHashSendingBitcoin = computed(() => {
-  return sendingJobsByBatchNumbers.value.find((item) => item.batchNumber === String(props.batchNumber));
-});
-const txHashSucessBitcoin = computed(() => {
-  return successJobByBatchNumbers.value.find((item) => item.batchNumber === String(props.batchNumber));
-});
-
-const txHashBitcoinExist = computed(() => {
-  if (txHashPendingBitcoin.value) {
-    return txHashPendingBitcoin.value.revealTxId;
-  }
-  if (txHashSendingBitcoin.value) {
-    return txHashSendingBitcoin.value.revealTxId;
-  }
-  if (txHashSucessBitcoin.value) {
-    return txHashSucessBitcoin.value.revealTxId;
-  }
-  return undefined;
+const { displayedBatchesStatus: batchStatus, txHashBitcoinExist } = useBatchesStatus({
+  batchItem: props.batch,
+  batchNumer: props.batchNumber,
 });
 
 const tableInfoItems = computed(() => {

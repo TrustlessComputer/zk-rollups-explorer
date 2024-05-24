@@ -251,6 +251,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  statusBatch: {
+    type: String,
+    default: "",
+  },
 });
 
 const route = useRoute();
@@ -307,6 +311,7 @@ type TransactionListItemMapped = TransactionListItem & {
 const transactions = computed<TransactionListItemMapped[] | undefined>(() => {
   return data.value?.map((transaction) => ({
     ...transaction,
+    status: props.statusBatch || transaction.status,
     methodName: getTransactionMethod(transaction),
     fromNetwork: transaction.isL1Originated ? "L1" : "L2",
     toNetwork: "L2", // even withdrawals go through L2 addresses (800A or bridge addresses)

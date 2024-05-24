@@ -108,7 +108,7 @@ declare namespace Api {
       isL1Originated: boolean;
       l1BatchNumber: number | null;
       isL1BatchSealed: boolean;
-      status: "included" | "committed" | "proved" | "verified" | "failed";
+      status: "included" | "committed" | "proved" | "verified" | "failed" | any;
       error: string | null;
       revertReason: string | null;
     };

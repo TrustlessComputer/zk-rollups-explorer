@@ -184,7 +184,7 @@
       "included": "Processed on",
       "committed": "Sent on",
       "proved": "Validated on",
-      "verified": "Executed on",
+      "verified": "Inscribed on",
       "failed": "Failed on"
     },
     "statusComponent": {

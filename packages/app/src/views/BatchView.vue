@@ -17,7 +17,11 @@
 
       <div ref="transactionsContainer">
         <h2 class="table-transaction-title">{{ t("batches.transactionTable.title") }}</h2>
-        <TransactionsTable class="transactions-table" :search-params="transactionsSearchParams">
+        <TransactionsTable
+          class="transactions-table"
+          :search-params="transactionsSearchParams"
+          :status-batch="batchStatusDetailStr"
+        >
           <template #not-found>
             <TransactionEmptyState :batch-exists="!!batchItem" />
           </template>
@@ -41,6 +45,8 @@ import Title from "@/components/common/Title.vue";
 import TransactionsTable from "@/components/transactions/Table.vue";
 
 import useBatch from "@/composables/useBatch";
+import useBatchesEnhance from "@/composables/useBatchesEnhance";
+import useBatchesStatus from "@/composables/useBatchesStatus";
 import useNotFound from "@/composables/useNotFound";
 
 import type { BreadcrumbItem } from "@/components/common/Breadcrumbs.vue";
@@ -61,6 +67,15 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+});
+
+const { displayedBatchesStatus: batchStatus, statusStr: batchStatusDetail } = useBatchesStatus({
+  batchItem: undefined,
+  batchNumer: props.id,
+});
+
+const batchStatusDetailStr = computed(() => {
+  return batchStatusDetail.value;
 });
 
 const breadcrumbItems = computed((): BreadcrumbItem[] => [

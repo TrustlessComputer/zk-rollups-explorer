@@ -3,6 +3,7 @@ export type NetworkConfig = {
   icon: string;
   verificationApiUrl?: string;
   apiUrl: string;
+  internalApiUrl?: string;
   rpcUrl: string;
   bridgeUrl?: string;
   l2NetworkName: string;

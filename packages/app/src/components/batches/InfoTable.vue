@@ -57,11 +57,11 @@ const tableInfoItems = computed(() => {
   };
 
   let tableItems: InfoTableItem[] = [
-    {
-      label: t("batches.index"),
-      tooltip: t("batches.indexTooltip"),
-      value: props.batchNumber,
-    },
+    // {
+    //   label: t("batches.index"),
+    //   tooltip: t("batches.indexTooltip"),
+    //   value: props.batchNumber,
+    // },
   ];
 
   if (!props.batch) {

@@ -152,7 +152,7 @@ const batchesWrapper = computed(() => {
           } else if (successJobByBatchNumbers.value.includes(String(item.number))) {
             status = "verified";
           } else {
-            // status = "";
+            status = "processed_on";
           }
         }
         return {

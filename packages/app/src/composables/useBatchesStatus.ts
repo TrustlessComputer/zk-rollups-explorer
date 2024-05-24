@@ -87,7 +87,9 @@ export default (params: UseBatchesStatusParams) => {
     if (txHashSucessBitcoin.value) {
       return t("batches.status.verified");
     }
-    return batchItem?.status || undefined;
+    return t("batches.status.processed_on");
+
+    // return batchItem?.status || undefined;
   });
 
   return {

@@ -5,7 +5,7 @@
         <div class="logo-container">
           <router-link :to="{ name: 'home' }">
             <span class="sr-only">BVM</span>
-            <BVMLogo />
+            <BVMLogo class="w-[40px] h-[40px]" />
           </router-link>
         </div>
         <div class="burger-button-container">
@@ -219,7 +219,7 @@ const hasContent = computed(() => {
     @apply flex items-center justify-between border-b border-neutral-500 py-4 md:space-x-10 lg:justify-start;
   }
   .logo-container {
-    @apply flex justify-start;
+    @apply flex justify-start items-center w-4 h-4;
   }
   .burger-button-container {
     @apply -my-2 -mr-2 lg:hidden;

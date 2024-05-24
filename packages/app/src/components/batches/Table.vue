@@ -136,8 +136,13 @@ const successJobByBatchNumbers = computed(() => {
 const batchesWrapper = computed(() => {
   return props.batches
     ? props.batches.map((item) => {
-        // console.log("ITEM ==== ", item);
+        // console.log("ITEM ==== ", {
+        //   batchNumber: item.number,
+        //   status: item.status,
+        // });
+
         let status = item.status;
+
         if (status !== "sealed") {
           //Detail status on Bitcoin
           if (pendingJobsByBatchNumbers.value.includes(String(item.number))) {
@@ -147,7 +152,7 @@ const batchesWrapper = computed(() => {
           } else if (successJobByBatchNumbers.value.includes(String(item.number))) {
             status = "verified";
           } else {
-            status = "";
+            // status = "";
           }
         }
         return {

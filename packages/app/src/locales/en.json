@@ -236,6 +236,7 @@
     "size": "Batch Size",
     "sizeTooltip": "Number of transactions inside of the L1 Batch",
     "timestamp": "Timestamp",
+    "inscribedOnBitcoinTx": "Inscribed On Bitcoin TxHash",
     "timestampTooltip": "The date and time at which L1 Batch is produced",
     "rootHash": "Batch Root",
     "rootHashTooltip": "The L1 Batch Root is a cryptographic hash (or Merkle root) that summarizes a batch of L2 transactions or data and is submitted to the L1 blockchain as a single transaction",

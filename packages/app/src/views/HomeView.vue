@@ -78,8 +78,6 @@ const {
   item: batchStatus,
 } = useBatchesEnhance();
 
-useNetworkStats();
-
 const displayedBatches = computed(() => {
   return batches.value ? batches.value : [];
 });

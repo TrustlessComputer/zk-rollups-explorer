@@ -22,8 +22,7 @@ export function useFetch<T>(getRequestUrl: (...params: string[]) => URL): UseFet
     failed.value = false;
 
     try {
-      const response = await $fetch<T>(getRequestUrl(...params).toString());
-
+      const response = await $fetch<T>(getRequestUrl(...params).toJSON());
       item.value = response;
     } catch (error) {
       failed.value = true;

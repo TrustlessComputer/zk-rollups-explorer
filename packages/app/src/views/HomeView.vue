@@ -20,10 +20,11 @@
           <InfoTooltip class="batches-tooltip">{{ t("batches.tooltipInfo") }}</InfoTooltip>
         </div>
         <TableBatches
-          v-if="(isBatchesPending || batches) && !isBatchesFailed"
+          v-if="(isBatchesPending || batches || isBatchesStatusPending) && !isBatchesFailed"
           :data-testid="$testId.latestBatchesTable"
           :loading="isBatchesPending"
           :batches="displayedBatches"
+          :batche-status="displayedBatchesStatus"
           :columns="['status', 'size', 'txnBatch', 'age']"
         >
           <template #not-found>
@@ -64,21 +65,46 @@ import TableBodyColumn from "@/components/common/table/TableBodyColumn.vue";
 import TransactionsTable from "@/components/transactions/Table.vue";
 
 import useBatches from "@/composables/useBatches";
+import useBatchesEnhance from "@/composables/useBatchesEnhance";
 import useNetworkStats from "@/composables/useNetworkStats";
 
 const { t } = useI18n();
 const { fetch: fetchNetworkStats, pending: networkStatsPending, item: networkStats } = useNetworkStats();
 const { load: getBatches, pending: isBatchesPending, failed: isBatchesFailed, data: batches } = useBatches();
+const {
+  fetch: getBatchesEnhance,
+  pending: isBatchesStatusPending,
+  failed: isBatchesStatusFailed,
+  item: batchStatus,
+} = useBatchesEnhance();
 
-const data1 = useNetworkStats();
-const data2 = useNetworkStats();
+useNetworkStats();
+
 const displayedBatches = computed(() => {
   return batches.value ? batches.value : [];
 });
 
-fetchNetworkStats();
+const displayedBatchesStatus = computed(() => {
+  return batchStatus.value
+    ? batchStatus.value
+    : {
+        pending: 0,
+        pendingJob: [],
+        sending: 0,
+        sendingJob: [],
+        success: 0,
+        successJob: [],
+      };
+});
 
+// console.log("HOME PAGE Props: ", {
+//   displayedBatches,
+//   displayedBatchesStatus,
+// });
+
+fetchNetworkStats();
 getBatches(1, new Date());
+getBatchesEnhance();
 </script>
 
 <style lang="scss" scoped>

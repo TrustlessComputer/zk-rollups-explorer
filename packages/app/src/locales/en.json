@@ -274,6 +274,8 @@
     "tooltipInfo": "Latest batches submitted to Ethereum Network",
     "status": {
       "verified": "Inscribed on",
+      "verified_sending_on": "Sending on",
+      "verified_pending_on": "Pending on",
       "sealed": "Processed on",
       "failed": "Failed"
     }

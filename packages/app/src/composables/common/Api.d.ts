@@ -28,12 +28,29 @@ declare namespace Api {
       iconURL: string | null;
     };
 
+    type BatchStatusDetail = {
+      batchNumber: string;
+      status: string;
+      revealTxId: string;
+    };
+
+    type BatchStatus = {
+      pending?: number;
+      pendingJob?: BatchStatusDetail[];
+
+      sending?: number;
+      sendingJob?: BatchStatusDetail[];
+
+      success?: number;
+      successJob?: BatchStatusDetail[];
+    };
+
     type BatchListItem = {
       number: string;
       timestamp: string;
       rootHash?: string | null;
       executedAt: string | null;
-      status: "sealed" | "verified";
+      status: "sealed" | "verified" | string;
       l1TxCount: number;
       l2TxCount: number;
       size: number;

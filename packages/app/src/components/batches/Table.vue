@@ -1,5 +1,6 @@
+<!-- eslint-disable vue/valid-v-for -->
 <template>
-  <Table class="batches-table" :class="{ loading }" :items="batches" :loading="loading">
+  <Table class="batches-table" :class="{ loading }" :items="batchesWrapper" :loading="loading">
     <template v-if="batches?.length || loading" #table-head>
       <TableHeadColumn v-if="columns.includes('status')">{{ t("batches.table.status") }}</TableHeadColumn>
       <TableHeadColumn v-if="columns.includes('txnBatch')">{{ t("batches.table.txnBatch") }}</TableHeadColumn>
@@ -8,7 +9,7 @@
     </template>
     <template #loading>
       <tr class="loader-row" v-for="item in loadingRows" :key="item">
-        <TableBodyColumn v-for="(col, index) in 4" :key="`col-${index}`" class="loader-col">
+        <TableBodyColumn v-for="(, index) in 4" :key="`col-${index}`" class="loader-col">
           <ContentLoader />
         </TableBodyColumn>
       </tr>
@@ -53,6 +54,7 @@
 </template>
 
 <script lang="ts" setup>
+import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 
 import Badge from "@/components/common/Badge.vue";
@@ -64,16 +66,30 @@ import TableHeadColumn from "@/components/common/table/TableHeadColumn.vue";
 import TimeField from "@/components/common/table/fields/TimeField.vue";
 
 import type { BatchListItem } from "@/composables/useBatches";
+import type { BatchStatus } from "@/composables/useBatchesEnhance";
 import type { PropType } from "vue";
 
 import { utcStringFromISOString } from "@/utils/helpers";
 
 const { t, te } = useI18n();
 
-defineProps({
+const props = defineProps({
   batches: {
     type: Array as PropType<BatchListItem[]>,
     default: () => [],
+  },
+  batcheStatus: {
+    type: Object as PropType<BatchStatus>,
+    default: () => {
+      return {
+        pending: 0,
+        pendingJob: [],
+        sending: 0,
+        sendingJob: [],
+        success: 0,
+        successJob: [],
+      };
+    },
   },
   loading: {
     type: Boolean,
@@ -89,10 +105,65 @@ defineProps({
   },
 });
 
+const pendingJobsByBatchNumbers = computed(() => {
+  if (props.batcheStatus.pendingJob && props.batcheStatus.pendingJob.length > 0) {
+    return props.batcheStatus.pendingJob.map((item) => item.batchNumber);
+  }
+  return [];
+});
+
+const sendingJobsByBatchNumbers = computed(() => {
+  if (props.batcheStatus.sendingJob && props.batcheStatus.sendingJob.length > 0) {
+    return props.batcheStatus.sendingJob.map((item) => item.batchNumber);
+  }
+  return [];
+});
+
+const successJobByBatchNumbers = computed(() => {
+  if (props.batcheStatus.successJob && props.batcheStatus.successJob.length > 0) {
+    return props.batcheStatus.successJob.map((item) => item.batchNumber);
+  }
+  return [];
+});
+
+// console.log("Batches Table ", props);
+// console.log("Local Props ", {
+//   pendingJobsByBatchNumbers,
+//   sendingJobsByBatchNumbers,
+//   successJobByBatchNumbers,
+// });
+
+const batchesWrapper = computed(() => {
+  return props.batches
+    ? props.batches.map((item) => {
+        // console.log("ITEM ==== ", item);
+        let status = item.status;
+        if (status !== "sealed") {
+          //Detail status on Bitcoin
+          if (pendingJobsByBatchNumbers.value.includes(String(item.number))) {
+            status = "verified_pending_on";
+          } else if (sendingJobsByBatchNumbers.value.includes(String(item.number))) {
+            status = "verified_sending_on";
+          } else if (successJobByBatchNumbers.value.includes(String(item.number))) {
+            status = "verified";
+          } else {
+            status = "";
+          }
+        }
+        return {
+          ...item,
+          status,
+        };
+      })
+    : [];
+});
+
 function getBadgeIconByStatus(status: BatchListItem["status"]) {
   if (status === "sealed") {
     // return "RuneChain"
     return "BVM";
+  } else {
+    // Status Batch detail mapper (new code)
   }
   // return "BVM"
   return "Bitcoin";

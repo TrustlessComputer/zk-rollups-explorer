@@ -12,6 +12,6 @@ export type BatchStatus = Api.Response.BatchStatus;
 
 export default (context = useContext()) => {
   return useFetch<Api.Response.BatchStatus>(
-    () => new URL(`${(context.currentNetwork.value.internalApiUrl || context.currentNetwork.value.apiUrl, "/status")}`)
+    () => new URL(`${context.currentNetwork.value.internalApiUrl || context.currentNetwork.value.apiUrl}/status`)
   );
 };

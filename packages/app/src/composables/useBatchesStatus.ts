@@ -16,6 +16,11 @@ export default (params: UseBatchesStatusParams) => {
     failed: isBatchesStatusFailed,
     item: batchStatus,
   } = useBatchesEnhance();
+
+  const batchNumerWatcher = computed(() => {
+    return batchNumer;
+  });
+
   const { t } = useI18n();
 
   getBatchesEnhance();
@@ -55,13 +60,13 @@ export default (params: UseBatchesStatusParams) => {
   });
 
   const txHashPendingBitcoin = computed(() => {
-    return pendingJobs.value.find((item) => item.batchNumber === String(batchNumer || -1));
+    return pendingJobs.value.find((item) => item.batchNumber === String(batchNumerWatcher.value || -1));
   });
   const txHashSendingBitcoin = computed(() => {
-    return sendingJobs.value.find((item) => item.batchNumber === String(batchNumer || -1));
+    return sendingJobs.value.find((item) => item.batchNumber === String(batchNumerWatcher.value || -1));
   });
   const txHashSucessBitcoin = computed(() => {
-    return successJob.value.find((item) => item.batchNumber === String(batchNumer || -1));
+    return successJob.value.find((item) => item.batchNumber === String(batchNumerWatcher.value || -1));
   });
 
   const txHashBitcoinExist = computed(() => {

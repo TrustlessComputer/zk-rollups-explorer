@@ -15,6 +15,7 @@ import InfoTableBlock from "@/components/blocks/InfoTableBlock.vue";
 import CopyContent from "@/components/common/table/fields/CopyContent.vue";
 import TimeField from "@/components/common/table/fields/TimeField.vue";
 
+import useBatchesStatus from "@/composables/useBatchesStatus";
 import useContext from "@/composables/useContext";
 
 import type { Block } from "@/composables/useBlock";
@@ -40,12 +41,22 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
+  batchNumber: {
+    type: Number,
+    default: 0,
+    required: true,
+  },
+});
+
+const { txHashBitcoinExist } = useBatchesStatus({
+  batchItem: undefined,
+  batchNumer: props.batchNumber,
 });
 
 const tableInfoItems = computed(() => {
   type InfoTableItem = {
     label: string;
-    tooltip: string;
+    tooltip: string | undefined;
     value: string | number | null | Record<string, unknown>;
     component?: Component;
     url?: string;
@@ -57,11 +68,12 @@ const tableInfoItems = computed(() => {
     };
   };
   let tableItems: InfoTableItem[] = [
-    { label: t("blocks.table.blockNumber"), tooltip: t("blocks.table.blockNumberTooltip"), value: props.blockNumber },
+    // { label: t("blocks.table.blockNumber"), tooltip: t("blocks.table.blockNumberTooltip"), value: props.blockNumber },
   ];
   if (!props.block) {
     return [tableItems];
   }
+
   tableItems.push(
     {
       label: t("blocks.table.blockSize"),
@@ -103,10 +115,20 @@ const tableInfoItems = computed(() => {
       component: TimeField,
     }
   );
+
+  if (txHashBitcoinExist.value) {
+    tableItems.push({
+      label: t("batches.inscribedOnBitcoinTx"),
+      tooltip: undefined,
+      value: { value: txHashBitcoinExist.value },
+      component: txHashBitcoinExist.value ? CopyContent : undefined,
+    });
+  }
+
   for (const [key, timeKey] of [
-    ["commitTxHash", "committedAt", "notYetCommitted"],
-    ["proveTxHash", "provenAt", "notYetProven"],
-    ["executeTxHash", "executedAt", "notYetExecuted"],
+    // ["commitTxHash", "committedAt", "notYetCommitted"],
+    // ["proveTxHash", "provenAt", "notYetProven"],
+    // ["executeTxHash", "executedAt", "notYetExecuted"],
   ] as [keyof Block, keyof Block, string][]) {
     if (props.block[key]) {
       tableItems.push(

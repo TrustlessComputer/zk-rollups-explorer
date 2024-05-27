@@ -13,7 +13,14 @@
     <Spinner v-else size="md" />
     <div class="tables-container">
       <div>
-        <BlockTable class="block-table" :loading="blockPending" :block="blockItem" :block-number="id" />
+        <BlockTable
+          class="block-table"
+          v-if="!blockPending && blockItem"
+          :loading="blockPending || !blockItem"
+          :block="blockItem"
+          :block-number="id"
+          :batch-number="blockItem?.l1BatchNumber"
+        />
       </div>
       <div>
         <h2 class="table-transaction-title">{{ t("blocks.transactionTable.title") }}</h2>

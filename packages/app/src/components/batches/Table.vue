@@ -166,7 +166,7 @@ const batchesWrapper = computed(() => {
 function getBadgeIconByStatus(status: BatchListItem["status"]) {
   if (status === "sealed") {
     // return "RuneChain"
-    return "BVM";
+    return "SuperSonic";
   } else {
     // Status Batch detail mapper (new code)
   }

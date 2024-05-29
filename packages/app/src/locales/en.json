@@ -1,6 +1,6 @@
 {
   "general": {
-    "l2NetworkName": "BVM",
+    "l2NetworkName": "SuperSonic",
     "l1NetworkName": "Bitcoin"
   },
   "copyButton": {
@@ -15,7 +15,7 @@
   "networkStats": {
     "title": "Network Stats",
     "subtitleTestnet": "Stats are occasionally reset on testnet.",
-    "subtitleMainnet": "BVM Mainnet is open to everyone.",
+    "subtitleMainnet": "SuperSonic Mainnet is open to everyone.",
     "committed": "Committed Blocks",
     "verified": "Verified Blocks",
     "transactions": "Transactions",
@@ -314,7 +314,7 @@
   },
   "blockExplorer": {
     "title": "Block Explorer",
-    "subtitle": "Block Explorer provides all the information to deep dive into transactions, blocks, contracts, and much more. Deep dive into BVM and explore the network.",
+    "subtitle": "Block Explorer provides all the information to deep dive into transactions, blocks, contracts, and much more. Deep dive into SuperSonic and explore the network.",
     "latestBlocks": "Latest Blocks",
     "latestTransactions": "Latest Transactions",
     "batches": "Latest Batches"

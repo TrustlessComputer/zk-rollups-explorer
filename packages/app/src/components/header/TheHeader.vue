@@ -4,8 +4,9 @@
       <div class="header-container">
         <div class="logo-container">
           <router-link :to="{ name: 'home' }">
-            <span class="sr-only">BVM</span>
-            <BVMLogo class="w-[40px] h-[40px]" />
+            <span class="sr-only">SuperSonic</span>
+            <!-- <BVMLogo class="w-[40px] h-[40px]" /> -->
+            <SuperSonicLogo class="w-[50px] h-[50px]" />
           </router-link>
         </div>
         <div class="burger-button-container">
@@ -128,6 +129,7 @@ import LocaleSwitch from "@/components/LocaleSwitch.vue";
 import NetworkSwitch from "@/components/NetworkSwitch.vue";
 import BVMLogo from "@/components/icons/BVMLogo.vue";
 import DiscordIcon from "@/components/icons/DiscordIcon.vue";
+import SuperSonicLogo from "@/components/icons/SuperSonicLogo.vue";
 import TwitterIcon from "@/components/icons/TwitterIcon.vue";
 import ZkSync from "@/components/icons/ZkSync.vue";
 import ZkSyncEra from "@/components/icons/ZkSyncEra.vue";

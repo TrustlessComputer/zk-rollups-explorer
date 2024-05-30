@@ -9,7 +9,13 @@
       <span v-if="failed" class="error-message">
         {{ t("failedRequest") }}
       </span>
-      <BatchesTable v-else :loading="pending" :loading-rows="pageSize" :batches="data ?? []">
+      <BatchesTable
+        v-else
+        :loading="pending || isBatchesStatusPending"
+        :loading-rows="pageSize"
+        :batches="data ?? []"
+        :batche-status="displayedBatchesStatus"
+      >
         <template v-if="total && total > pageSize" #footer>
           <div class="pagination-container">
             <Pagination :active-page="page!" :total-items="total!" :page-size="pageSize" :disabled="pending" />
@@ -30,14 +36,29 @@ import Breadcrumbs, { type BreadcrumbItem } from "@/components/common/Breadcrumb
 import Pagination from "@/components/common/Pagination.vue";
 
 import useBatches from "@/composables/useBatches";
+import useBatchesEnhance from "@/composables/useBatchesEnhance";
 import useContext from "@/composables/useContext";
 
 const { t } = useI18n();
+const { fetch: getBatchesEnhance, pending: isBatchesStatusPending, item: batchStatus } = useBatchesEnhance();
 
 const context = useContext();
 const route = useRoute();
 
 const { load, pending, failed, data, total, pageSize, page } = useBatches(context);
+
+const displayedBatchesStatus = computed(() => {
+  return batchStatus.value
+    ? batchStatus.value
+    : {
+        pending: 0,
+        pendingJob: [],
+        sending: 0,
+        sendingJob: [],
+        success: 0,
+        successJob: [],
+      };
+});
 
 const breadcrumbItems = computed((): BreadcrumbItem[] => [
   {
@@ -57,6 +78,8 @@ watch(
   },
   { immediate: true }
 );
+
+getBatchesEnhance();
 </script>
 
 <style lang="scss">

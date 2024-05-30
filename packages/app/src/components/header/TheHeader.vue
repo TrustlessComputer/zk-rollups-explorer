@@ -4,7 +4,7 @@
       <div class="header-container">
         <div class="logo-container">
           <router-link :to="{ name: 'home' }">
-            <span class="sr-only">SuperSonic</span>
+            <span class="sr-only">Supersonic</span>
             <!-- <BVMLogo class="w-[40px] h-[40px]" /> -->
             <SuperSonicLogo class="w-[50px] h-[50px]" />
           </router-link>

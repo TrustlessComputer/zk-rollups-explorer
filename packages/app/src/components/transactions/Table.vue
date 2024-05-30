@@ -317,7 +317,7 @@ const transactions = computed<TransactionListItemMapped[] | undefined>(() => {
     toNetwork: "L2", // even withdrawals go through L2 addresses (800A or bridge addresses)
     statusColor: transaction.status === "failed" ? "danger" : "dark-success",
     // statusIcon: ["failed", "included"].includes(transaction.status) ? "RuneChain" : "BVM",
-    statusIcon: ["failed", "included", "committed", "proved"].includes(transaction.status) ? "SuperSonic" : "Bitcoin",
+    statusIcon: ["failed", "included", "committed", "proved"].includes(transaction.status) ? "Supersonic" : "Bitcoin",
   }));
 });
 

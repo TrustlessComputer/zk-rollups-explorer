@@ -13,6 +13,7 @@ export type NetworkConfig = {
   published: boolean;
   hostnames: string[];
   tokensMinLiquidity?: number;
+  bitcoinExplorerUrl?: string;
 };
 
 export type EnvironmentConfig = {

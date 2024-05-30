@@ -25,7 +25,8 @@
       "maintenance": false,
       "name": "goerli",
       "published": true,
-      "rpcUrl": "https://testnet.era.zksync.dev"
+      "rpcUrl": "https://testnet.era.zksync.dev",
+      "bitcoinExplorerUrl": "https://blockstream.regtest.trustless.computer/regtest"
     },
     {
       "apiUrl": "https://block-explorer-api.sepolia.zksync.dev",

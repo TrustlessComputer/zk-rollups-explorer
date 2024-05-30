@@ -94,6 +94,9 @@ const tableInfoItems = computed(() => {
       tooltip: undefined,
       value: { value: txHashBitcoinExist.value },
       component: props.batch.rootHash ? CopyContent : undefined,
+      url: txHashBitcoinExist.value
+        ? `${currentNetwork.value.bitcoinExplorerUrl}/tx/${txHashBitcoinExist.value}`
+        : undefined,
     });
   }
 

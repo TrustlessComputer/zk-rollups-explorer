@@ -314,7 +314,7 @@
   },
   "blockExplorer": {
     "title": "Block Explorer",
-    "subtitle": "Block Explorer provides all the information to deep dive into transactions, blocks, contracts, and much more. Deep dive into SuperSonic and explore the network.",
+    "subtitle": "Block Explorer provides all the information to deep dive into transactions, blocks, contracts, and much more. Deep dive into Supersonic and explore the network.",
     "latestBlocks": "Latest Blocks",
     "latestTransactions": "Latest Transactions",
     "batches": "Latest Batches"

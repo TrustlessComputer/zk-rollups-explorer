@@ -1,6 +1,6 @@
 {
   "general": {
-    "l2NetworkName": "RuneChain",
+    "l2NetworkName": "Arca",
     "l1NetworkName": "Supersonic"
   },
   "copyButton": {
@@ -15,7 +15,7 @@
   "networkStats": {
     "title": "Network Stats",
     "subtitleTestnet": "Stats are occasionally reset on testnet.",
-    "subtitleMainnet": "RuneChain Mainnet is open to everyone.",
+    "subtitleMainnet": "Arca Mainnet is open to everyone.",
     "committed": "Committed Blocks",
     "verified": "Verified Blocks",
     "transactions": "Transactions",
@@ -309,8 +309,8 @@
     "subtitle": "zkRollups significantly cheaper than L1 or Optimistic Rollups"
   },
   "blockExplorer": {
-    "title": "RuneChain Block Explorer",
-    "subtitle": "RuneChain Block Explorer provides all the information to deep dive into transactions, blocks, contracts, and much more. Deep dive into RuneChain and explore the network.",
+    "title": "Arca Block Explorer",
+    "subtitle": "Arca Block Explorer provides all the information to deep dive into transactions, blocks, contracts, and much more. Deep dive into Arca and explore the network.",
     "latestBlocks": "Latest Blocks",
     "latestTransactions": "Latest Transactions",
     "batches": "Latest Batches"
@@ -407,7 +407,7 @@
   },
   "contractVerification": {
     "title": "Smart Contract Verification",
-    "subtitle": "Source code verification provides transparency for users interacting with smart contracts. By uploading the source code, RuneChain Explorer will match the compiled code with that on the blockchain.",
+    "subtitle": "Source code verification provides transparency for users interacting with smart contracts. By uploading the source code, Arca Explorer will match the compiled code with that on the blockchain.",
     "resources": {
       "title": "You can also verify your smart-contract using {hardhat}",
       "links": {
@@ -664,7 +664,7 @@
     }
   },
   "document": {
-    "title": "RuneChain Block Explorer",
+    "title": "Arca Block Explorer",
     "home": "Transactions, Blocks, Contracts and much more"
   },
   "notFound": {

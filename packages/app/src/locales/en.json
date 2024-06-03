@@ -1,7 +1,7 @@
 {
   "general": {
     "l2NetworkName": "RuneChain",
-    "l1NetworkName": "BVM"
+    "l1NetworkName": "Supersonic"
   },
   "copyButton": {
     "tooltip": "Copied!"

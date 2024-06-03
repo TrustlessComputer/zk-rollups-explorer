@@ -1,6 +1,6 @@
 {
   "general": {
-    "l2NetworkName": "Arca",
+    "l2NetworkName": "Arcade",
     "l1NetworkName": "Supersonic"
   },
   "copyButton": {
@@ -175,8 +175,8 @@
     "subtitle": "zkRollups значно дешевше, ніж L1 або Optimistic Rollups"
   },
   "blockExplorer": {
-    "title": "Arca Провідник",
-    "subtitle": "Arca в режимі реального часу інформацію про блоки, транзакції, контракти та іншу активність у мережі.",
+    "title": "Arcade Провідник",
+    "subtitle": "Arcade в режимі реального часу інформацію про блоки, транзакції, контракти та іншу активність у мережі.",
     "latestBlocks": "Останні Блоки",
     "latestTransactions": "Останні транзакції"
   },

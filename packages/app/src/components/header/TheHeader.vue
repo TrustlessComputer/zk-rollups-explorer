@@ -5,7 +5,12 @@
         <div class="logo-container">
           <router-link :to="{ name: 'home' }">
             <span class="sr-only">{{ t("general.l2NetworkName") }}</span>
-            <RuneChain />
+            <!-- <RuneChain /> -->
+            <img
+              src="https://storage.googleapis.com/tc-cdn-prod/game-hub/app/logo_app.svg"
+              alt=""
+              class="w-[45px] h-[45px]"
+            />
           </router-link>
         </div>
         <div class="burger-button-container">

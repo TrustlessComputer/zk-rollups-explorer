@@ -178,6 +178,10 @@ const links = [
     label: computed(() => t("header.nav.contractVerification")),
     to: { name: "contract-verification" },
   },
+  {
+    label: computed(() => t("header.nav.lightnode")),
+    url: computed(() => `https://lightnode.testnet.supersonic.bvm.network`),
+  },
 ];
 
 // if (currentNetwork.value.bridgeUrl) {

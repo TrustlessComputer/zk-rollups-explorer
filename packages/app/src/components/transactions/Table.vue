@@ -40,8 +40,7 @@
         <Badge :color="item.statusColor" :data-testid="$testId.statusBadge">
           <template #default>
             {{ te(`transactions.status.${item.status}`) ? t(`transactions.status.${item.status}`) : item.status }}
-            &nbsp;
-            <div>{{ item.statusIcon }}</div>
+            {{ item.statusIcon }}
           </template>
         </Badge>
 

@@ -19,10 +19,7 @@
           <Badge color="dark-success" :data-testid="$testId.statusBadge">
             <template #default>
               {{ te(`batches.status.${item.status}`) ? t(`batches.status.${item.status}`) : item.status }}
-              <component :is="'div'">
-                &nbsp;
-                {{ getBadgeIconByStatus(item.status) }}
-              </component>
+              {{ getBadgeIconByStatus(item.status) }}
             </template>
           </Badge>
         </div>

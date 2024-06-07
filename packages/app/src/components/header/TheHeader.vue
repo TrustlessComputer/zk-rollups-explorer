@@ -9,7 +9,7 @@
             <img
               src="https://storage.googleapis.com/tc-cdn-prod/nbc/icons/cryptowars-logo-transparent.svg"
               alt=""
-              class="auto h-[60px]"
+              class="w-auto h-[80px]"
             />
           </router-link>
         </div>

@@ -7,9 +7,9 @@
             <span class="sr-only">{{ t("general.l2NetworkName") }}</span>
             <!-- <RuneChain /> -->
             <img
-              src="https://storage.googleapis.com/tc-cdn-prod/game-hub/app/logo_app.svg"
+              src="https://storage.googleapis.com/tc-cdn-prod/nbc/icons/cryptowars-logo-transparent.svg"
               alt=""
-              class="w-[45px] h-[45px]"
+              class="auto h-[60px]"
             />
           </router-link>
         </div>

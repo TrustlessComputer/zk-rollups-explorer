@@ -1,6 +1,6 @@
 {
   "general": {
-    "l2NetworkName": "Crypto Wars",
+    "l2NetworkName": "Iron Chain Bank",
     "l1NetworkName": "Supersonic"
   },
   "copyButton": {
@@ -175,8 +175,8 @@
     "subtitle": "zkRollups значно дешевше, ніж L1 або Optimistic Rollups"
   },
   "blockExplorer": {
-    "title": "Crypto Wars Провідник",
-    "subtitle": "Crypto Wars в режимі реального часу інформацію про блоки, транзакції, контракти та іншу активність у мережі.",
+    "title": "Iron Chain Bank Провідник",
+    "subtitle": "Iron Chain Bank в режимі реального часу інформацію про блоки, транзакції, контракти та іншу активність у мережі.",
     "latestBlocks": "Останні Блоки",
     "latestTransactions": "Останні транзакції"
   },

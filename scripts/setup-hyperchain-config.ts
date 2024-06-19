@@ -6,9 +6,9 @@ import { parse as parseConnectionString } from 'pg-connection-string';
 
 const buildAppConfig = (zkSyncEnvs: { [key: string]: string }) => {
   const domain = zkSyncEnvs.CHAIN_ETH_ZKSYNC_NETWORK_URL || '';
-  const apiUrl = `https://${domain}/api`;
-  const verificationApiUrl = `https://${domain}/verification`;
-  const rpcUrl = `https://${domain}/rpc`;
+  const apiUrl = `https://api.${domain}`;
+  const verificationApiUrl = `https://verification.${domain}`;
+  const rpcUrl = `https://rpc.${domain}`;
   return {
     networks: [
       {

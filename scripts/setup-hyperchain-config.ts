@@ -5,7 +5,7 @@ import * as dotenv from 'dotenv';
 import { parse as parseConnectionString } from 'pg-connection-string';
 
 const buildAppConfig = (zkSyncEnvs: { [key: string]: string }) => {
-  const domain = zkSyncEnvs.CHAIN_ETH_ZKSYNC_NETWORK_DOMAIN || '';
+  const domain = zkSyncEnvs.CHAIN_ETH_ZKSYNC_NETWORK_URL || '';
   const apiUrl = `https://${domain}/api`;
   const verificationApiUrl = `https://${domain}/verification`;
   const rpcUrl = `https://${domain}/rpc`;
@@ -61,7 +61,11 @@ const buildEnvFileContent = (json: { [key: string]: string | number }) =>
     .join('\n');
 
 (async () => {
+  const args = process.argv.slice(2);
+  const selectedEnv = args[0];
+
   const zkSyncHome = process.env.ZKSYNC_HOME;
+
   if (!zkSyncHome) {
     console.error(
       'Please set ZKSYNC_HOME environment variable to contain path to your zksync-era repo.',
@@ -86,14 +90,16 @@ const buildEnvFileContent = (json: { [key: string]: string | number }) =>
     );
     process.exit(1);
   }
-  const { selectedEnv }: { selectedEnv: string } = await prompt([
-    {
-      message: 'Which environment do you want to use?',
-      name: 'selectedEnv',
-      type: 'select',
-      choices: envFiles,
-    },
-  ]);
+  // const { selectedEnv }: { selectedEnv: string } = await prompt([
+  //   {
+  //     message: 'Which environment do you want to use?',
+  //     name: 'selectedEnv',
+  //     type: 'select',
+  //     choices: envFiles,
+  //   },
+  // ]);
+  // const zkSyncHome = process.env.ZKSYNC_HOME;
+
   const selectedEnvFilePath = path.join(zkSyncEnvFolder, `${selectedEnv}.env`);
 
   const envs = dotenv.parse(readFileSync(selectedEnvFilePath));

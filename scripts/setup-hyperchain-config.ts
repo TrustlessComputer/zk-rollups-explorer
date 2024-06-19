@@ -12,7 +12,7 @@ const buildAppConfig = (zkSyncEnvs: { [key: string]: string }) => {
   return {
     networks: [
       {
-        apiURL: apiUrl,
+        apiUrl: apiUrl,
         verificationApiUrl: verificationApiUrl,
         hostnames: ['localhost'],
         icon: '/images/icons/zksync-arrows.svg',

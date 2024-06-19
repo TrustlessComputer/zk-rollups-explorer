@@ -62,6 +62,9 @@ const buildEnvFileContent = (json: { [key: string]: string | number }) =>
 
 (async () => {
   const zkSyncHome = process.env.ZKSYNC_HOME;
+  const args = process.argv.slice(2);
+  const selectedEnv = args[0];
+
   if (!zkSyncHome) {
     console.error(
       'Please set ZKSYNC_HOME environment variable to contain path to your zksync-era repo.',
@@ -86,14 +89,14 @@ const buildEnvFileContent = (json: { [key: string]: string | number }) =>
     );
     process.exit(1);
   }
-  const { selectedEnv }: { selectedEnv: string } = await prompt([
-    {
-      message: 'Which environment do you want to use?',
-      name: 'selectedEnv',
-      type: 'select',
-      choices: envFiles,
-    },
-  ]);
+  // const { selectedEnv }: { selectedEnv: string } = await prompt([
+  //   {
+  //     message: 'Which environment do you want to use?',
+  //     name: 'selectedEnv',
+  //     type: 'select',
+  //     choices: envFiles,
+  //   },
+  // ]);
   const selectedEnvFilePath = path.join(zkSyncEnvFolder, `${selectedEnv}.env`);
 
   const envs = dotenv.parse(readFileSync(selectedEnvFilePath));

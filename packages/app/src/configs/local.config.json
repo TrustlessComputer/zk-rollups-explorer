@@ -1,18 +1,20 @@
 {
   "networks": [
     {
-      "apiUrl": "http://localhost:3020",
-      "bridgeUrl": "http://localhost:3000/bridge",
+      "apiUrl": "https://zkbridge-explorer-api.dev.trustless.computer",
+      "verificationApiUrl": "http://127.0.0.1:3070",
       "hostnames": [
         "localhost"
       ],
       "icon": "/images/icons/zksync-arrows.svg",
-      "l2ChainId": 270,
-      "l2NetworkName": "Local",
+      "l2ChainId": 296969,
+      "l2NetworkName": "lokalchozt2",
+      "bridgeUrl": "https://zkbridge.dev.trustless.computer/bridge",
+      "l2WalletUrl": "https://zkbridge.dev.trustless.computer",
       "maintenance": false,
-      "name": "local",
+      "name": "lokalchozt2",
       "published": true,
-      "rpcUrl": "http://localhost:3050"
+      "rpcUrl": "http://127.0.0.1:3050"
     }
   ]
 }

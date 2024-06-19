@@ -6,11 +6,7 @@
           <router-link :to="{ name: 'home' }">
             <span class="sr-only">{{ t("general.l2NetworkName") }}</span>
             <!-- <RuneChain /> -->
-            <img
-              src="https://storage.googleapis.com/tc-cdn-prod/nbc/icons/iron-bank-logo.svg"
-              alt=""
-              class="w-auto h-[60px]"
-            />
+            <img src="A-TODO" alt="" class="w-auto h-[60px]" />
           </router-link>
         </div>
         <div class="burger-button-container">

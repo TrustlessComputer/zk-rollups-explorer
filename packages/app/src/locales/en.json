@@ -1,6 +1,6 @@
 {
   "general": {
-    "l2NetworkName": "Iron Chain Bank",
+    "l2NetworkName": "B-100",
     "l1NetworkName": "Supersonic"
   },
   "copyButton": {
@@ -15,7 +15,7 @@
   "networkStats": {
     "title": "Network Stats",
     "subtitleTestnet": "Stats are occasionally reset on testnet.",
-    "subtitleMainnet": "Iron Chain Bank Mainnet is open to everyone.",
+    "subtitleMainnet": "B-100 Mainnet is open to everyone.",
     "committed": "Committed Blocks",
     "verified": "Verified Blocks",
     "transactions": "Transactions",
@@ -309,8 +309,8 @@
     "subtitle": "zkRollups significantly cheaper than L1 or Optimistic Rollups"
   },
   "blockExplorer": {
-    "title": "Iron Chain Bank Block Explorer",
-    "subtitle": "Iron Chain Bank Block Explorer provides all the information to deep dive into transactions, blocks, contracts, and much more. Deep dive into Iron Chain Bank and explore the network.",
+    "title": "B-100 Block Explorer",
+    "subtitle": "B-100 Block Explorer provides all the information to deep dive into transactions, blocks, contracts, and much more. Deep dive into B-100 and explore the network.",
     "latestBlocks": "Latest Blocks",
     "latestTransactions": "Latest Transactions",
     "batches": "Latest Batches"
@@ -407,7 +407,7 @@
   },
   "contractVerification": {
     "title": "Smart Contract Verification",
-    "subtitle": "Source code verification provides transparency for users interacting with smart contracts. By uploading the source code, Iron Chain Bank Explorer will match the compiled code with that on the blockchain.",
+    "subtitle": "Source code verification provides transparency for users interacting with smart contracts. By uploading the source code, B-100 Explorer will match the compiled code with that on the blockchain.",
     "resources": {
       "title": "You can also verify your smart-contract using {hardhat}",
       "links": {
@@ -664,7 +664,7 @@
     }
   },
   "document": {
-    "title": "Iron Chain Bank Block Explorer",
+    "title": "B-100 Block Explorer",
     "home": "Transactions, Blocks, Contracts and much more"
   },
   "notFound": {

@@ -61,10 +61,9 @@ const buildEnvFileContent = (json: { [key: string]: string | number }) =>
     .join('\n');
 
 (async () => {
+  const zkSyncHome = process.env.ZKSYNC_HOME;
   const args = process.argv.slice(2);
   const selectedEnv = args[0];
-
-  const zkSyncHome = process.env.ZKSYNC_HOME;
 
   if (!zkSyncHome) {
     console.error(
@@ -98,8 +97,6 @@ const buildEnvFileContent = (json: { [key: string]: string | number }) =>
   //     choices: envFiles,
   //   },
   // ]);
-  // const zkSyncHome = process.env.ZKSYNC_HOME;
-
   const selectedEnvFilePath = path.join(zkSyncEnvFolder, `${selectedEnv}.env`);
 
   const envs = dotenv.parse(readFileSync(selectedEnvFilePath));

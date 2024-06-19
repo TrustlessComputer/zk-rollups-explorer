@@ -4,25 +4,29 @@ import { prompt } from 'enquirer';
 import * as dotenv from 'dotenv';
 import { parse as parseConnectionString } from 'pg-connection-string';
 
-const buildAppConfig = (zkSyncEnvs: { [key: string]: string }) => ({
-  networks: [
-    {
-      // apiUrl: "https://zkbridge-explorer-api.dev.trustless.computer",
-      apiUrl: 'http://127.0.0.1:3020',
-      verificationApiUrl: zkSyncEnvs.API_CONTRACT_VERIFICATION_URL || '',
-      hostnames: ['localhost'],
-      icon: '/images/icons/zksync-arrows.svg',
-      l2ChainId: parseInt(zkSyncEnvs.CHAIN_ETH_ZKSYNC_NETWORK_ID, 10) || '',
-      l2NetworkName: zkSyncEnvs.CHAIN_ETH_ZKSYNC_NETWORK || '',
-      bridgeUrl: 'https://portal.testnet.supersonic2.bvm.network/bridge',
-      // l2WalletUrl: 'https://zkbridge.dev.trustless.computer',
-      maintenance: false,
-      name: zkSyncEnvs.CHAIN_ETH_ZKSYNC_NETWORK || '',
-      published: true,
-      rpcUrl: zkSyncEnvs.API_WEB3_JSON_RPC_HTTP_URL || '',
-    },
-  ],
-});
+const buildAppConfig = (zkSyncEnvs: { [key: string]: string }) => {
+  const domain = zkSyncEnvs.CHAIN_ETH_ZKSYNC_NETWORK_DOMAIN || '';
+  const apiUrl = `https://${domain}/api`;
+  const verificationApiUrl = `https://${domain}/verification`;
+  const rpcUrl = `https://${domain}/rpc`;
+  return {
+    networks: [
+      {
+        apiURL: apiUrl,
+        verificationApiUrl: verificationApiUrl,
+        hostnames: ['localhost'],
+        icon: '/images/icons/zksync-arrows.svg',
+        l2ChainId: parseInt(zkSyncEnvs.CHAIN_ETH_ZKSYNC_NETWORK_ID, 10) || '',
+        l2NetworkName: zkSyncEnvs.CHAIN_ETH_ZKSYNC_NETWORK || '',
+        bridgeUrl: 'https://portal.supersonic.bvm.network/bridge',
+        maintenance: false,
+        name: zkSyncEnvs.CHAIN_ETH_ZKSYNC_NETWORK || '',
+        published: true,
+        rpcUrl: rpcUrl,
+      },
+    ],
+  };
+};
 
 const buildDataFetcherConfig = (zkSyncEnvs: { [key: string]: string }) => {
   return {

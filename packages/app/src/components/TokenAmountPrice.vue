@@ -22,6 +22,8 @@ import { computed } from "vue";
 
 import TokenIconLabel from "@/components/TokenIconLabel.vue";
 
+import useCoinPrices from "@/composables/useCoinPrices";
+
 import type { Token } from "@/composables/useToken";
 import type { BigNumberish } from "ethers";
 import type { PropType } from "vue";
@@ -41,9 +43,12 @@ const props = defineProps({
   },
 });
 
+const { fetchCoinPrices, coinsPrice } = useCoinPrices();
+
 const priceAmount = computed(() => {
   if (props.amount && props.token && props.token.usdPrice) {
-    return formatPricePretty(props.amount, props.token.decimals, props.token.usdPrice.toString());
+    // return formatPricePretty(props.amount, props.token.decimals, props.token.usdPrice.toString());
+    return formatPricePretty(props.amount, props.token.decimals, coinsPrice?.["BVM"] || "1");
   }
   return "";
 });
@@ -51,6 +56,8 @@ const priceAmount = computed(() => {
 const decimalAmount = computed(() =>
   props.amount && props.token ? formatBigNumberish(props.amount, props.token.decimals) : ""
 );
+
+fetchCoinPrices();
 </script>
 
 <style lang="scss" scoped>

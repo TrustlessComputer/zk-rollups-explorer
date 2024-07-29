@@ -1,19 +1,21 @@
 {
   "networks": [
     {
-      "apiUrl": "https://block-explorer-api.mainnet.zksync.io",
-      "verificationApiUrl": "https://zksync2-mainnet-explorer.zksync.io",
-      "bridgeUrl": "https://portal.zksync.io/bridge/?network=mainnet",
-      "hostnames": ["https://explorer.zksync.io"],
+      "apiUrl": "https://api.supersonic.bvm.network",
+      "internalApiUrl": "https://status.supersonic.bvm.network",
+      "verificationApiUrl": "https://contractverification.supersonic.bvm.network",
+      "hostnames": [
+        "localhost"
+      ],
       "icon": "/images/icons/zksync-arrows.svg",
-      "l1ExplorerUrl": "https://etherscan.io",
-      "l2ChainId": 324,
-      "l2NetworkName": "zkSync Era Mainnet",
+      "l2ChainId": 222150,
+      "l2NetworkName": "supersonic",
+      "bridgeUrl": "https://portal.supersonic.bvm.network/bridge",
+      "l2WalletUrl": "https://zkbridge.dev.trustless.computer",
       "maintenance": false,
-      "name": "mainnet",
+      "name": "supersonic",
       "published": true,
-      "rpcUrl": "https://mainnet.era.zksync.io",
-      "tokensMinLiquidity": 0
+      "rpcUrl": "https://rpc.supersonic.bvm.network"
     }
   ]
 }

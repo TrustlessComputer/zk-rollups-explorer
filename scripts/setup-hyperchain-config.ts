@@ -5,7 +5,7 @@ import * as dotenv from 'dotenv';
 import { parse as parseConnectionString } from 'pg-connection-string';
 
 const buildAppConfig = (zkSyncEnvs: { [key: string]: string }) => {
-  const domain = zkSyncEnvs.CHAIN_ETH_ZKSYNC_NETWORK_URL || '';
+  const domain = `aaabbbccc.l2aas.com`;
   const apiUrl = `https://api.${domain}`;
   const verificationApiUrl = `https://contractverification.${domain}`;
   const rpcUrl = `https://rpc.${domain}`;

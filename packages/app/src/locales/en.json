@@ -1,7 +1,7 @@
 {
   "general": {
     "l2NetworkName": "Iron Chain Bank",
-    "l1NetworkName": "Supersonic"
+    "l1NetworkName": "Bitcoin Regtest"
   },
   "copyButton": {
     "tooltip": "Copied!"

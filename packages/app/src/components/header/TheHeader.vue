@@ -12,6 +12,12 @@
               class="w-auto h-[60px]"
             />
           </router-link>
+          <div
+            v-if="!!isMainnet === false"
+            class="absolute bg-[#707070] right-[-50px] top-[-10px] rounded-[4px] min-w-[50px] justify-center flex"
+          >
+            <span class="white text-white text-[11px]">Testnet</span>
+          </div>
         </div>
         <div class="burger-button-container">
           <PopoverButton class="burger-button">
@@ -143,6 +149,8 @@ const { changeLanguage } = useLocalization();
 const { t, locale } = useI18n({ useScope: "global" });
 const route = useRoute();
 const { currentNetwork } = useContext();
+
+const isMainnet = currentNetwork.value.isMainnet;
 
 const navigation = reactive([
   {

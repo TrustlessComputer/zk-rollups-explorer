@@ -1,6 +1,6 @@
 <h1 align="center">Block Explorer</h1>
 
-<p align="center">Online blockchain browser for viewing and analyzing <a href="https://zksync.io">BVM</a> blockchain.</p>
+<p align="center">Online blockchain browser for viewing and analyzing <a href="https://zksync.io">EAI</a> blockchain.</p>
 
 ## 📌 Overview
 
@@ -111,7 +111,7 @@ There is a docker compose configuration that allows you to run Block Explorer an
 docker compose up
 ```
 
-It will run local Ethereum node, BVM, Postgres DB and all Block Explorer services.
+It will run local Ethereum node, EAI, Postgres DB and all Block Explorer services.
 
 ## ⛓️ Connection to your Hyperchain
 

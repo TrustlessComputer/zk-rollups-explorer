@@ -1,33 +1,20 @@
 {
   "networks": [
     {
-      "apiUrl": "https://block-explorer-api.mainnet.zksync.io",
-      "verificationApiUrl": "https://zksync2-mainnet-explorer.zksync.io",
-      "bridgeUrl": "https://portal.zksync.io/bridge/?network=mainnet",
-      "hostnames": ["https://explorer.zksync.io"],
+      "isMainnet": true,
+      "apiUrl": "https://api.eternalai.bvm.network",
+      "verificationApiUrl": "https://contractverification.eternalai.bvm.network",
+      "hostnames": [
+        "localhost"
+      ],
       "icon": "/images/icons/zksync-arrows.svg",
-      "l1ExplorerUrl": "https://etherscan.io",
-      "l2ChainId": 324,
-      "l2NetworkName": "zkSync Era Mainnet",
+      "l2ChainId": 222672,
+      "l2NetworkName": "eternalai",
+      "bridgeUrl": "https://portal.supersonic.bvm.network/bridge",
       "maintenance": false,
-      "name": "mainnet",
+      "name": "eternalai",
       "published": true,
-      "rpcUrl": "https://mainnet.era.zksync.io",
-      "tokensMinLiquidity": 0
-    },
-    {
-      "apiUrl": "https://api.testnet.runechain.com", //TO DO 
-      "verificationApiUrl": "https://contractverification.testnet.runechain.com", //TO DO 
-      "hostnames": ["localhost"],//TO DO 
-      "icon": "/images/icons/runchains.svg",  //TO DO 
-      "l2ChainId": 22221, // TO DO 
-      "l2NetworkName": "runechain", // TO DO 
-      "bridgeUrl": "https://portal.testnet.runechain.com/bridge", // TO DO 
-      "l2WalletUrl": "https://testnet.runechain.com/rpc", // TO DO 
-      "maintenance": false, // TO DO 
-      "name": "Rune Chain", // TO DO 
-      "published": true,  // TO DO 
-      "rpcUrl": "http://127.0.0.1:3050",  // TO DO 
+      "rpcUrl": "https://rpc.eternalai.bvm.network"
     }
   ]
 }

@@ -3,7 +3,7 @@ import { BaseEntity } from "../common/entities/base.entity";
 import { normalizeAddressTransformer } from "../common/transformers/normalizeAddress.transformer";
 
 export enum TokenType {
-  ETH = "BVM",
+  ETH = "EAI",
   ERC20 = "ERC20",
   ERC721 = "ERC721",
 }
@@ -11,12 +11,12 @@ export enum TokenType {
 export const ETH_TOKEN: Token = {
   l2Address: "0x000000000000000000000000000000000000800A",
   l1Address: "0x0000000000000000000000000000000000000000",
-  symbol: "BVM",
+  symbol: "EAI",
   name: "Ether",
   decimals: 18,
   // Fallback data in case ETH token is not in the DB
   // iconURL: "https://assets.coingecko.com/coins/images/279/large/ethereum.png?1698873266",
-  iconURL: "https://cdn.bvm.network/internal/8c50c936-cb41-40d0-8d93-8cdf7f88bd37.svg",
+  iconURL: "https://eternalai.org/_next/image?url=%2Fimages%2FlogoFooter.png&w=1920&q=75",
   liquidity: 220000000000,
   usdPrice: 1800,
 } as Token;

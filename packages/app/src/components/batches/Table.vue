@@ -91,7 +91,7 @@ function getBadgeIconByStatus(status: BatchListItem["status"]) {
     // return "RuneChain";
     return t("general.l2NetworkName");
   }
-  // return "BVM";
+  // return "EAI";
   return t("general.l1NetworkName");
 }
 </script>

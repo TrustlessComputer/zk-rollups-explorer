@@ -7,7 +7,7 @@
             <span class="sr-only">{{ t("general.l2NetworkName") }}</span>
             <!-- <RuneChain /> -->
             <img
-              src="https://storage.googleapis.com/tc-cdn-prod/nbc/icons/iron-bank-logo.svg"
+              src="https://storage.googleapis.com/tc-cdn-prod/nbc/icons/bvm-icons/bvm-white.svg"
               alt=""
               class="w-auto h-[60px]"
             />

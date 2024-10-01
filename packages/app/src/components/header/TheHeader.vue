@@ -7,7 +7,7 @@
             <span class="sr-only">{{ t("general.l2NetworkName") }}</span>
             <!-- <RuneChain /> -->
             <img
-              src="https://storage.googleapis.com/tc-cdn-prod/nbc/icons/bvm-icons/bvm-white.svg"
+              src="https://storage.googleapis.com/tc-cdn-prod/nbc/icons/eai_logo_white.png"
               alt=""
               class="w-auto h-[60px]"
             />
